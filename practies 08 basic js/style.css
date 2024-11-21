@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    
+  }
+
+
+
+
+#flag{
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.d-grid{
+    width: 75%;
+    margin: 0 auto;
+}
+

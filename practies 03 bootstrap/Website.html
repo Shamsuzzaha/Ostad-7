@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./data/bootstrap.css" />
+  <link rel="stylesheet" href="./data/style.css" />
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- js file -->
+  <script src="./data/bootstrap.bundle.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-dark-subtle">
+  <header>
+    <!-- Navigation section -->
+    <section>
+      <div class="container">
+        <div class="navbar navbar-dark bg-dark rounded">
+          <div class=" ">
+            <nav class="">
+              <ul class="nav nav-pills p-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                    Home
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-shopping-tab" data-bs-toggle="pill" data-bs-target="#pills-shopping"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                    Shopping
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-houserent-tab" data-bs-toggle="pill" data-bs-target="#pills-houserent"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                    House Rent
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                    Contact Us
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="p-1">
+            <a class="navbar-brand" href="#">
+              <img src="./data/szr.ico" alt="company logo" />
+              <span>SZR Enterprise</span>
+            </a>
+          </div>
+          <div class="">
+            <div class="social">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+
+
+
+
+  <!-- Main content -->
+  <div class="tab-content" id="pills-tabContent">
+    <!-- Home page content -->
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="container mt-5">
+        <div class="row d-flex align-items-center">
+          <div class="col-6 ">
+            <h1>Welcome To ShamsuzZaman Remon's Website</h1>
+            <p class="p-1">
+              In business world there is no alternative to smart things. Smart
+              phone is one of the smart thing that helps human to achieve the
+              control of world.
+            </p>
+            <button class="btn bg-danger text-light">Explore</button>
+          </div>
+          <div class="col-6">
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner rounded-5">
+                <div class="carousel-item active">
+                  <img
+                    src="https://lh3.googleusercontent.com/p/AF1QipN9ekzUkI1H11u6Orw1BOLqBEotgh47_vgjt8kr=s680-w680-h510"
+                    class="d-block w-100" alt="Slide 1" />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://lh3.googleusercontent.com/p/AF1QipOUEBe4DGmxyAqarRn8Uj3VfvTBcmKrt9wXVUql=s680-w680-h510"
+                    class="d-block w-100" alt="Slide 2" />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://lh3.googleusercontent.com/p/AF1QipMe9TUDihM72mOI3tNUZPuG6qcY1E1PrGsGrY4P=s680-w680-h510"
+                    class="d-block w-100" alt="Slide 3" />
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shopping section -->
+    <div class="tab-pane fade" id="pills-shopping" role="tabpanel" aria-labelledby="pills-shopping-tab">
+      <div class="container mt-3">
+        <div class="row text-center">
+          <h1>Smart Zone Mobile Shop</h1>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <!-- House Rent section -->
+    <div class="tab-pane fade" id="pills-houserent" role="tabpanel" aria-labelledby="pills-houserent-tab">
+      Smart Home house rent
+    </div>
+
+  <!-- Contact section -->
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    Contact us later
+  </div>
+
+
+
+  </div>
+</body>
+</html>

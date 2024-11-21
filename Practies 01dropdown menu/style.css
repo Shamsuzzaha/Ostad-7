@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    background-color: navajowhite;
+    border-radius: 10px;
+}
+
+/* wrapper */
+.container .wrapper{
+    width: 75%;
+    margin:auto ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* logo */
+.container .wrapper #logo{
+    border-radius: 30px;
+    cursor: grab;
+}
+
+/* item */
+.container .navigation nav .item{
+    display: flex;
+    gap: 20px
+    
+}
+
+/* item list */
+.container .navigation nav .item .item-list{
+list-style: none;
+position: relative;
+border-radius: 5px;
+
+
+}
+
+/* item list hover */
+.container .navigation nav .item .item-list:hover{
+    background-color: rgb(219, 152, 152);
+    }
+
+/* item link */
+.container .navigation nav .item .item-list .item-link{
+text-decoration: none;
+}
+
+/* item link underline effect */
+.container .navigation nav .item .item-list .item-link::after{
+    position: absolute;
+    content: "";
+    display: flex;
+    width: 0%;
+    height: 1px;
+    left: 50%;
+    background-color: black;
+    transition: all .3s linear;
+    }
+.container .navigation nav .item .item-list .item-link:hover::after{
+        position: absolute;
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 1px;
+        left: 0%;
+        background-color: black;
+        }
+
+
+
+/* submenu */
+.container .navigation nav .item .item-list .submenu{
+    
+    position: absolute;
+    top: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+/* floating menu */
+.container .navigation nav .item .item-list:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    top: 25px;
+}
+
+/* sub list */
+.submenu-list  {
+    
+    list-style: none;
+    padding-bottom: 5px;
+    border-bottom: 0.5px solid gray;
+    width: 100px;
+    background-color: navajowhite;
+    border-radius: 5px 10px 10px 5px;
+}
+
+/* sub lit hover */
+.submenu-list:hover  {
+    background-color: rgb(219, 152, 152);
+}
+
+/* sub link */
+.submenu-link{
+    text-decoration: none;
+    
+}
+
+/* login and sign up */
+.logindiv{
+    display: flex;
+    gap: 10px;
+
+}
+.login, .signup{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color:  white;
+    cursor: grab;
+}
+.signup{
+    background-color: green;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.nav-link{
+    
+    font-weight: bold;
+}
+
+#img-top{
+    width: 300px;
+    position: relative;
+}
+
+#svg{
+    width: 350px;
+    position: absolute;
+    z-index: -1;
+}
+
+main{
+    margin-top: 100px; 
+    margin-bottom: 100px;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+h1{
+    color: blue;
+    text-align: center;
+}
