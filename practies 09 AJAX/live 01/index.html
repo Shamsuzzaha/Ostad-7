@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>Product Name</label>
+    <input id="ProductName"/>
+    <br/>
+    <br/>
+    <label>Product Code</label>
+    <input id="ProductCode"/>
+    <br/>
+    <br/>
+    <label>Product Img</label>
+    <input id="Img"/>
+    <br/>
+    <br/>
+    <label>Unit Price</label>
+    <input id="UnitPrice"/>
+    <br/>
+    <br/>
+    <label>Qty</label>
+    <input id="Qty"/>
+    <br/>
+    <br/>
+    <label>Total Price</label>
+    <input id="TotalPrice"/>
+    <br/>
+    <br/>
+
+    <button onclick="SendDataToBackEnd()">Submit</button>
+
+
+    <h1 id="myMessage"></h1>
+    
+
+
+
+    <script>
+
+        async function SendDataToBackEnd(){
+
+            let ProductName=document.getElementById("ProductName").value;
+            let ProductCode=document.getElementById("ProductCode").value;
+            let Img=document.getElementById("Img").value;
+            let UnitPrice=document.getElementById("UnitPrice").value;
+            let Qty=document.getElementById("Qty").value;
+            let TotalPrice=document.getElementById("TotalPrice").value;
+
+            let DataForSend={
+                ProductName:ProductName,
+                ProductCode:ProductCode,
+                Img:Img,
+                UnitPrice:UnitPrice,
+                Qty:Qty,
+                TotalPrice:TotalPrice
+            }
+
+
+            let myMessage=document.getElementById("myMessage");
+            myMessage.innerText="Sending......"
+
+          
+            let URL="https://crud.teamrabbil.com/api/v1/CreateProduct"
+
+
+            let res= await fetch(
+                URL,
+                { 
+                    method: "POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify(DataForSend) 
+                }
+            )    
+            
+            
+            let data= await res.json();
+
+            myMessage.innerText=JSON.stringify(data)
+
+
+
+
+
+
+        }
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

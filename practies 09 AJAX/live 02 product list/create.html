@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create List</title>
+<!--    css link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- custom css -->
+ <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- loader -->
+<div id="createLoading" class="loading-overlay d-none">
+    <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+<!-- Content -->
+ <div class="container">
+    <div class="row ">
+                   
+      
+            <!-- Page title -->
+             <div class="col-8">
+            <h1>Add Your Product to Stock</h1>
+        </div>
+          <!-- navigation button -->
+          <div class="col-12 col-md-4">
+            <button class="float-end" onclick="window.location=`./index.html`">View Products List</button>
+        </div>
+        
+    </div>
+ </div>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+
+<!--            User input area-->
+
+            <form onsubmit="event.preventDefault(); createList();">
+                <label for="ProductName">Product Name</label>
+                <input type="text" id="ProductName" name="ProductName" placeholder="Enter Product Name">
+
+                <label for="ProductCode">Product Code</label>
+                <input type="text" id="ProductCode" name="ProductCode" placeholder="Enter Product Code">
+
+                <label for="ProductImage">Product Image</label>
+                <input type="text" id="ProductImage" name="ProductImage" placeholder="Enter Product Image URL">
+
+                <label for="ProductPrice">Product Price</label>
+                <input type="text" id="ProductPrice" name="ProductPrice" placeholder="Enter Product Price">
+
+                <label for="ProductQuantity">Product Quantity</label>
+                <input type="text" id="ProductQuantity" name="ProductQuantity" placeholder="Enter Product Quantity">
+
+                <label for="TotalPrice">Total Price</label>
+                <input type="text" id="TotalPrice" name="TotalPrice" placeholder="Enter Total Price">
+
+                <input id="submit" class="" type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- ----------------------------------- -->
+ <script>
+    // Create list =  submit button function-->
+async function createList() {
+//     input value assign
+    let ProductName = document.getElementById("ProductName").value;
+    let ProductCode = document.getElementById("ProductCode").value;
+    let ProductImage = document.getElementById("ProductImage").value;
+    let ProductPrice = document.getElementById("ProductPrice").value;
+    let ProductQuantity = document.getElementById("ProductQuantity").value;
+    let TotalPrice = document.getElementById("TotalPrice").value;
+
+        
+
+    try {
+        document.getElementById('createLoading').classList.remove('d-none')
+//     Fetch data
+let createURL = `https://crud.teamrabbil.com/api/v1/CreateProduct`;
+        let res = await axios.post(createURL, {
+            Img: ProductImage,
+            ProductCode: ProductCode,
+            ProductName: ProductName,
+            Qty: ProductQuantity,
+            TotalPrice: TotalPrice,
+            UnitPrice: ProductPrice
+        });
+        
+//     success message
+        if (res.status == 200) {
+            window.location = "index.html";
+        } else {
+            alert(res.message);
+        
+        }
+    }
+    catch(err) {
+        alert(err);
+    }
+    document.getElementById('createLoading').classList.add('d-none')    
+    
+}
+ </script>
+
+
+
+<!--    Axios link-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</body>
+</html>
