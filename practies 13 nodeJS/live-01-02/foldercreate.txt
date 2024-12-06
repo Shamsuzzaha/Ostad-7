@@ -1,0 +1,25 @@
+// -------Module----------
+const http = require('http')
+const fs = require('fs')
+
+const server = http.createServer((req, res) => {
+    // ------FS file system----------
+    //     Create Folder
+
+    async function folderCreate() {
+        try {
+            await fs.mkdirSync('foldercreate')
+            console.log("Successfully created folder")
+            res.end("Successfully created folder")
+        }
+        catch (err) {
+            console.error(err)
+            res.end('folder already created')
+                    }
+    }
+    folderCreate()
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+
+});

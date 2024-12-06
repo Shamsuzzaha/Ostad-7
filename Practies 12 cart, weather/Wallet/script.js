@@ -158,6 +158,7 @@ function deleteList(index){
         transactions.splice(index, 1);
         save();
         history();
+
     }
 }
 
@@ -221,6 +222,8 @@ function balance(){
        })
        total += positive - negative;
        document.getElementById("balance").innerText = `${total}`;
+   }else{
+       document.getElementById("balance").innerText = `0.00`;
    }
 
 }

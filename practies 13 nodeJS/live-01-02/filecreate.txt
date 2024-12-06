@@ -1,0 +1,22 @@
+Your file is created:// -------Module----------
+const http = require('http')
+const fs = require('fs')
+
+const server = http.createServer((req, res) => {
+    // ------FS file system----------
+    //     write file
+
+    async function fileCreate() {
+        try {
+            await fs.writeFileSync('filecreate.txt', 'Your file is created')
+            res.end('successfully created...')
+        }
+        catch (err) {
+            res.end(err)
+        }
+    }
+    fileCreate()
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+});

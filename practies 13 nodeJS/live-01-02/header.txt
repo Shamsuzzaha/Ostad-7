@@ -1,0 +1,16 @@
+// -------Module----------
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+// ------Status & Header set
+        res.statusCode = 200;
+        res.setHeader('Access-Control-Allow-Origin', '07');
+
+    // ------Headers------
+        let headers = req.headers
+        res.end(JSON.stringify(headers))
+
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+});

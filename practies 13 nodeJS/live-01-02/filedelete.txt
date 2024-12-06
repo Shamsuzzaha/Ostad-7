@@ -1,0 +1,25 @@
+// -------Module----------
+const http = require('http')
+const fs = require('fs')
+
+const server = http.createServer((req, res) => {
+    // ------FS file system----------
+    //     Delete file
+
+    async function fileDelete() {
+        try {
+            await fs.unlinkSync('newfile.txt')
+            console.log("Successfully deleted file")
+            res.end("Successfully deleted file")
+        }
+        catch (err) {
+            console.error(err)
+            res.end('Error while renameing file: file path is missind' + err)
+
+        }
+    }
+    fileDelete()
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+});

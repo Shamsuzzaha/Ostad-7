@@ -1,0 +1,25 @@
+// -------Module----------
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+    // ------FS file system----------
+    // Delete Folder
+    function dirDelete() {
+        try {
+            fs.rmSync('folderdelete', { recursive: true, force: true }); // Corrected method
+            res.writeHead(200, { 'Content-Type': 'text/plain' }); // Set proper status code and headers
+            res.end('Success: Folder deleted');
+        } catch (e) {
+            console.error(e);
+            res.writeHead(500, { 'Content-Type': 'text/plain' }); // Handle errors properly
+            res.end('Error: Failed to delete folder');
+        }
+    }
+
+    dirDelete();
+});
+
+server.listen(8080, function () {
+    console.log('Listening on port 8080');
+});

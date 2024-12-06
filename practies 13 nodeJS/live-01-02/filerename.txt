@@ -1,0 +1,25 @@
+// -------Module----------
+const http = require('http')
+const fs = require('fs')
+
+const server = http.createServer((req, res) => {
+    // ------FS file system----------
+    //     Rename file
+
+    async function fileRename() {
+        try {
+            await fs.renameSync('newfile.txt', 'filerename.txt')
+            res.end('Successfully renamed file')
+            console.log("Successfully renamed file")
+        }
+        catch (err) {
+            console.error(err)
+            res.end('Error while renameing file: Old path is missind' + err)
+
+        }
+    }
+    fileRename()
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+});

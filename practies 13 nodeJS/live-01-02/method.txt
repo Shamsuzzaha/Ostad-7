@@ -1,0 +1,15 @@
+// -------Module----------
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+
+    if(req.method === 'GET') {
+        res.end('You can get');
+    }
+    if(req.method === 'POST') {
+        res.end('You can post')
+    }
+})
+server.listen(8080,function(){
+    console.log('Listening on port 8080');
+});
