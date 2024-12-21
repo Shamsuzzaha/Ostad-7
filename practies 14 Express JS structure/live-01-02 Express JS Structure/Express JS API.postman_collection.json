@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "3ae62a95-e751-4e96-b84c-842fde2e7320",
+		"name": "Express JS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39949231"
+	},
+	"item": [
+		{
+			"name": "readtast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/readTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"readTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createtast",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/createTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"createTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatetast",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/updateTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletetask",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/deleteTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deleteTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paramCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/paramCreate/Zoha/28?country=Bangladesh",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"paramCreate",
+						"Zoha",
+						"28"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Bangladesh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSONbody",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Shamsuzzaha\",\r\n    \"age\": 28\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/jsonbody",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"jsonbody"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Shamsuzzaha Sumon",
+							"description": "Author name",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "28",
+							"description": "Adult",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/formData",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fileUpload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/shamsuzzahasumon@gmail.com/Other computers/D drive/Study/Important Files & photos/Job form fillup/Sumon 300 x 300.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/fileUpload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fileUpload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reqHeaders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Programmer_name",
+						"value": "Shamsuzzaha Sumon",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/reqHeaders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reqHeaders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
