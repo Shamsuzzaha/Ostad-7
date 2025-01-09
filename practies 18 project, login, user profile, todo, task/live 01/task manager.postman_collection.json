@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "c02ee208-1cdd-46e7-8d18-ca31fdec1bbf",
+		"name": "task manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39949231"
+	},
+	"item": [
+		{
+			"name": "user info",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"shamsuzzahasumon@gmail.com\",\r\n    \"firstName\": \"Shamsuzzaha\",\r\n    \"lastName\": \"sumon\",\r\n    \"mobile\": \"01521424904\",\r\n    \"password\": \"112233\",\r\n    \"otp\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/registration",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sumon@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/profiledetails",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"profiledetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Shamsuzzaha\",\r\n    \"lastName\": \"sumon\",\r\n    \"mobile\": \"01792846938\",\r\n    \"password\": \"00000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/profileupdate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"profileupdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email verification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/emailverification/shamsuzzahasumon@gmail.com",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"emailverification",
+								"shamsuzzahasumon@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "code verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/codeverification/shamsuzzahasumon@gmail.com/987351",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"codeverification",
+								"shamsuzzahasumon@gmail.com",
+								"987351"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"shamsuzzahasumon@gmail.com\",\r\n    \"otp\": \"\",\r\n    \"password\": \"1111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/resetpassword",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "create task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"sleep task\",\r\n    \"description\": \"I will sleep\",\r\n    \"status\": \"new\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/createtask",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"createtask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read task",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/readtask",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"readtask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/updatetask/677ea3835e61b838a257e1d3/completed",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"updatetask",
+								"677ea3835e61b838a257e1d3",
+								"completed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task list by status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/tasklistbystatus/completed",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tasklistbystatus",
+								"completed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/deletetask/677e795aa10e3ce39b1f8c30",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"deletetask",
+								"677e795aa10e3ce39b1f8c30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/counttask",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"counttask"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080/api"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1bW9uQGdtYWlsLmNvbSIsInVzZXJfaWQiOiI2Nzc4YzViYmIzMTViYjgwZmJhOWM1ZTAiLCJpYXQiOjE3MzYwOTMzMzQsImV4cCI6MTczODY4NTMzNH0.Ful7gPZ7Qaywvs_ghOtD5wUgyYMS3FO64h71G1oN97c"
+		}
+	]
+}
